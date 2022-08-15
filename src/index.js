@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import API from './fetchCountries';
 import getRefs from './get-refs';
-import renders from './renders';
+import { renderMarkupList, renderCountryInfo } from './renders';
 
 const DEBOUNCE_DELAY = 300;
 const refs = getRefs();
@@ -40,9 +40,9 @@ function showCountryOutput(countries) {
         clearMarkup();
     }
     if (countries.length === 1) {
-        renders.renderCountryInfo(countries);
+        renderCountryInfo(countries);
     } else {
-        renders.renderMarkupList(countries);
+        renderMarkupList(countries);
     }
 }
 

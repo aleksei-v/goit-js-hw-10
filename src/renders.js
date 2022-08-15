@@ -1,8 +1,7 @@
 import getRefs from './get-refs';
 const refs = getRefs();
 
-export default renders = {
-    renderMarkupList(list) {
+function renderMarkupList(list) {
         const markup = list
             .map(
                 ({
@@ -15,8 +14,8 @@ export default renders = {
             </div>`)
             .join('');
         return (refs.countryList.innerHTML = markup);
-    },
-    renderCountryInfo(list) {
+};
+function renderCountryInfo(list) {
         const markup = list
             .map(
                 ({
@@ -36,5 +35,5 @@ export default renders = {
         </div>`)
             .join('');
         return (refs.countryList.innerHTML = markup);
-    },
-}
+    }
+export { renderMarkupList, renderCountryInfo };
